@@ -212,148 +212,167 @@ img {
 }
 
 
+.award-why-title {
+    font-size: $font-size-30-16;
+}
 
-.award-about-list {
+.award-why {
+    padding: 30px 0;
+}
+
+.award-why-list {
     display: grid;
-    grid-template-columns: repeat(2, 420px);
-    margin-inline: auto;
-    max-width: 800px;
+    grid-template-columns: repeat(2, 470px);
+    gap: 10px;
 
-    list-style: none;
+    max-width: 950px;
+    margin-inline: auto;
+
     padding: 0;
 }
 
-
-
-.award-about-item__title {
-    font-size: $font-size-14;
-}
-
-.award-about-item {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 20px;
-}
-
-
-.award-about-item__bend,
-.award-about-item__nomination {
-    font-size: 11px;
-}
-
-.award-about-item__nomination {
-    margin-bottom: 32px;
-}
-
-
-.award-about-item__bend {
-    line-height: 1.1;
-    color: #818181;
-}
-
-
-.award-about-item {
+.award-why-item {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
 }
 
-
-.award-about-item img {
-    display: inline-block;
-    margin-left: 30px;
-}
-
-.award-about-item {
-    position: relative;
-
-}
-
-
-.award-about-item::after,
-.award-about-item::before {
-    display: inline-block;
+.award-why-item::after,
+.award-why-item::before {
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
+    display: inline-block;
     content: "";
-    width: 71px;
-    height: 163px;
-    background-image: url('../img/branch.svg');
+
+    width: 100px;
+    height: 200px;
+    background-image: url('../img/branch-left.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
+    z-index: -1;
 }
 
-.award-about-item::after {
+.award-why-item__header {
+    margin-left: 10px;
+}
+
+.award-why-item img {
+    margin-left: 50px;
+}
+
+.award-why-item::after {
     right: 0;
     left: unset;
     background-image: url('../img/branch-right.svg');
-    background-position: center right;
+}
+
+.award-why-item__brent {
+    font-size: 14px;
+}
+
+.award-why-item__brent,
+.award-why-item__nomination {
+    margin-bottom: 0;
+}
+
+.award-why-item__nomination {
+    font-size: 12px;
+}
+
+.award-why-item__brent {
+    font-weight: 200;
+    color: #797979;
+    line-height: 1.1;
+    font-size: $font-size-14;
+}
+
+.award-why-item__nomination {
+    margin-bottom: 32px;
 }
 
 @media (max-width:991.98px) {
-    .award-about-list {
-        display: grid;
-        grid-template-columns: repeat(2, 360px);
+    .award-why-list {
+        grid-template-columns: repeat(2, 340px);
+        gap: 30px;
     }
 
-    .award-about-item img {
+    .award-why-item::after,
+    .award-why-item::before {
+        top: 0;
+    }
+
+    .award-why-item::before {
+        left: -20px;
+    }
+
+    .award-why-item::after {
+        right: -20px;
+    }
+
+
+    .award-why-item img {
         width: 30%;
-        margin-left: 40px;
+        margin-left: 20px;
     }
 
-    .award-about-item::after,
-    .award-about-item::before {
-        width: 69px;
-        height: 120px;
+}
+
+@media (max-width:767.98px) {
+    .award-why-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .award-why-item {
+        padding: 0;
+    }
+
+    .award-why-item::after,
+    .award-why-item::before {
+        top: 20px;
+        width: 60px;
+        height: 70px;
         background-size: contain;
     }
 
-    .award-about-item {
-        gap: 20px;
-    }
-}
-
-
-@media (max-width:767.98px) {
-    .award-about-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        max-width: 370px;
+    .award-why-item__brent,
+    .award-why-item__nomination,
+    .award-why-item__title {
+        font-size: 10px;
     }
 
-    .award-about-item {
-        max-width: 370px;
+    .award-why-item__nomination {
+        margin-bottom: 10px;
+    }
+
+    .award-why-item img {
+        margin-left: 10px;
+    }
+
+    .award-why-item__header {
+        margin-left: 8px;
+    }
+
+    .award-why-item__title {
+        line-height: 1.1;
     }
 }
 
 @media (max-width:575.98px) {
-    .award-about-item {
-        gap: 10px;
-        max-width: 300px;
-       
-    }
-
-    .award-about-list {
+    .award-why-list {
+        grid-template-columns:1fr;
         gap: 20px;
+        max-width: 370px;
         justify-items: center;
+        margin-inline: auto;
     }
 
-    .award-about-item__title {
-        font-size: 12px;
-    }
+    .award-why-item {width: 240px;}
 
-    .award-about-item__nomination {
-        font-size: 9px;
-    }
-
-    .award-about-item img {
-        margin-left: 20px;
-    }
-
-    .award-about-item__nomination {
-        margin-bottom: 20px;
-        font-size: 9px;
+    .award-why-item::after, .award-why-item::before {
+        top: 15px;
     }
 }
